@@ -1,7 +1,7 @@
 <?php
 $type     = 'mysql';                
 $server   = 'localhost';            
-$db       = 'btth01_cse485';            
+$db       = 'btth02_cse485';            
 $port     = '3306';                   
 $charset  = 'utf8mb4';               
 
