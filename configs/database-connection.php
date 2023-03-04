@@ -1,4 +1,4 @@
-<?php
+
 $type     = 'mysql';                
 $server   = 'localhost';            
 $db       = 'btth02_cse485';            
@@ -19,4 +19,24 @@ try {
     $pdo = new PDO($dsn, $username, $password, $options);           
 } catch (PDOException $e) {                                         
     throw new PDOException($e->getMessage(), $e->getCode());        
+}
+
+<?php
+class DBConnection{
+    private $conn=null;
+
+    public function __construct(){
+         // B1. Kết nối DB Server
+         try {
+            $this->conn = new PDO('mysql:host=localhost;dbname=btth02_cse485;port=3306', 'root','');
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function getConnection(){
+        return $this->conn;
+    }
+
+
 }
